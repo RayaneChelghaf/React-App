@@ -1,7 +1,10 @@
-const Footer = ({ length }) => {
+import { useStoreState } from 'easy-peasy';
+
+const Footer = () => {
+    const postCount = useStoreState((state) => state.postCount);
     return (
-        <footer>
-            <p>{length} List {length === 1 ? "item" : "items"}</p>
+        <footer className='Footer'>
+            <p>{postCount} Blog Posts</p>
         </footer>
     )
 }
